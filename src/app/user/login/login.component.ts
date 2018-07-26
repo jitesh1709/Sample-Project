@@ -24,20 +24,14 @@ password:string='';
   }
   onSubmit(){
     this.username = localStorage.getItem('username');
-    var dummyData:string;
-    dummyData = localStorage.getItem('someMoney');
-    console.log(dummyData);
-    this.password = this.login.get('password').value;
-    if (this.username == 'jitesh' && this.password == 'jitesh') {
-    alert("Thank u for login");
-    this.login.reset();
-    this.router.navigate(['home']);
+    this.password = window.atob(localStorage.getItem('password'));
+    if(this.login.get('username').value==this.username && this.login.get('password').value==this.password){
+      alert('Success');
+      this.router.navigate(['login']);
     }
     else{
       alert("Invalid Credentials");
-      this.login.reset();
     }
-
   }
 }
       // code...

@@ -28,13 +28,11 @@ title = 'app';
 		console.log(this.registerForm.get('username').value);
 		var username,password :string;
 		username = this.registerForm.get('username').value;
-		password = this.registerForm.get('password').value;
-		var newPassword : string;
-		newPassword = window.btoa(password);
-		console.log(newPassword);
+		password = window.btoa(this.registerForm.get('password').value);
 		this.registerForm.reset();
 		this.router.navigate(['login']);
 		localStorage.setItem('username',username);
+		localStorage.setItem('password',password);
 	}
 }
 // userData:string='';emailData:string='';passData:string='';mobData:string='';addData:string='';
