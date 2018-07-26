@@ -26,8 +26,15 @@ title = 'app';
 	onRegister(){
 		alert("You are registered with us");
 		console.log(this.registerForm.get('username').value);
+		var username,password :string;
+		username = this.registerForm.get('username').value;
+		password = this.registerForm.get('password').value;
+		var newPassword : string;
+		newPassword = window.btoa(password);
+		console.log(newPassword);
 		this.registerForm.reset();
 		this.router.navigate(['login']);
+		localStorage.setItem('username',username);
 	}
 }
 // userData:string='';emailData:string='';passData:string='';mobData:string='';addData:string='';

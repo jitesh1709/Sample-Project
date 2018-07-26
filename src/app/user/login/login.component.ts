@@ -23,7 +23,10 @@ password:string='';
 	});
   }
   onSubmit(){
-    this.username = this.login.get('username').value;
+    this.username = localStorage.getItem('username');
+    var dummyData:string;
+    dummyData = localStorage.getItem('someMoney');
+    console.log(dummyData);
     this.password = this.login.get('password').value;
     if (this.username == 'jitesh' && this.password == 'jitesh') {
     alert("Thank u for login");
